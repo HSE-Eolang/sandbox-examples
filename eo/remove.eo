@@ -1,0 +1,17 @@
++package sandbox
++alias indexof sandbox.indexof
++alias removeat sandbox.removeat
+
+[arr element] > remove
+  indexof > position
+    arr
+    element
+
+  if. > @
+    eq.
+      -1
+      position
+    arr
+    removeat
+      arr
+      position

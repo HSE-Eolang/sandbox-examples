@@ -1,0 +1,15 @@
++package sandbox
+
+[arr element] > count
+  reduce. > @
+    arr
+    0
+    [accum current]
+      if. > @
+        eq.
+          current
+          ^.element
+        add.
+          accum
+          1
+        accum

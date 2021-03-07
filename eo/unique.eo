@@ -1,0 +1,16 @@
++package sandbox
++alias contains sandbox.contains
+
+[arr] > unique
+  reduce. > @
+    arr
+    *
+    [accum current]
+      if. > @
+        contains
+          accum
+          current
+        accum
+        append.
+          accum
+          current

@@ -1,0 +1,51 @@
++package sandbox
++alias stdout org.eolang.io.stdout
++alias sprintf org.eolang.txt.sprintf
++alias arrtostdout sandbox.arrtostdout
++alias arrtostrarr sandbox.arrtostrarr
++alias between sandbox.between
++alias binarytree sandbox.binarytree
++alias contains sandbox.contains
++alias count sandbox.count
++alias factorial sandbox.factorial
++alias fibonacci sandbox.fibonacci
++alias findcount sandbox.findcount
++alias findindex sandbox.findindex
++alias first sandbox.first
++alias floatarrtostdout sandbox.floatarrtostdout
++alias floatarrtostrarr sandbox.floatarrtostrarr
++alias imax sandbox.imax
++alias imin sandbox.imin
++alias indexof sandbox.indexof
++alias insert sandbox.insert
++alias insertall sandbox.insertall
++alias insertionsort sandbox.insertionsort
++alias intarrtofloatarr sandbox.intarrtofloatarr
++alias intarrtostdout sandbox.intarrtostdout
++alias intarrtostrarr sandbox.intarrtostrarr
++alias last sandbox.last
++alias leaf sandbox.leaf
++alias max sandbox.max
++alias merge sandbox.merge
++alias mergesort sandbox.mergesort
++alias min sandbox.min
++alias node sandbox.node
++alias pi sandbox.pi
++alias remove sandbox.remove
++alias removeall sandbox.removeall
++alias removeat sandbox.removeat
++alias reverse sandbox.reverse
++alias selectionsort sandbox.selectionsort
++alias set sandbox.set
++alias slice sandbox.slice
++alias slicefrom sandbox.slicefrom
++alias sliceto sandbox.sliceto
++alias strarrtointarr sandbox.strarrtointarr
++alias strarrtostdout sandbox.strarrtostdout
++alias unique sandbox.unique
+
+[args...] > app
+  stdout > @
+    sprintf
+      "%s"
+      "Hello world!"

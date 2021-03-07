@@ -1,0 +1,9 @@
++package sandbox
++alias indexof sandbox.indexof
+
+[arr element] > contains
+  greater. > @
+    indexof
+      arr
+      element
+    -1

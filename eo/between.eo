@@ -1,0 +1,10 @@
++package sandbox
+
+[x left right] > between
+  and. > @
+    leq.
+      left
+      x
+    leq.
+      x
+      right

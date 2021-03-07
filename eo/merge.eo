@@ -1,0 +1,10 @@
++package sandbox
+
+[arr1 arr2] > merge
+  reduce. > @
+    arr2
+    arr1
+    [accum current]
+      append. > @
+        accum
+        current

@@ -1,0 +1,65 @@
++package sandbox
++alias first sandbox.first
++alias slicefrom sandbox.slicefrom
++alias sliceto sandbox.sliceto
++alias merge sandbox.merge
+
+[arr] > mergesort
+  if. > @
+    less.
+      arr.length
+      2
+    arr
+    subMergeSort
+      *
+      mergesort
+        sliceto
+          arr
+          div.
+            arr.length
+            2
+      mergesort
+        slicefrom
+          arr
+          div.
+            arr.length
+            2
+
+[accum arr1 arr2] > subMergeSort
+  if. > @
+    arr1.empty
+    if.
+      arr2.empty
+      accum
+      merge
+        accum
+        arr2
+    if.
+      arr2.empty
+      merge
+        accum
+        arr1
+      if.
+        less.
+          first
+            arr1
+          first
+            arr2
+        subMergeSort
+          append.
+            accum
+            first
+              arr1
+          slicefrom
+            arr1
+            1
+          arr2
+        subMergeSort
+          append.
+            accum
+            first
+              arr2
+          arr1
+          slicefrom
+            arr2
+            1

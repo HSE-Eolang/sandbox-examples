@@ -1,0 +1,7 @@
++package sandbox
+
+[v l r] > node
+  v > value
+  l > left
+  r > right
+  false > empty

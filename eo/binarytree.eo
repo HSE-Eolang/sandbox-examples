@@ -1,0 +1,32 @@
++package sandbox
++alias node sandbox.node
+
+[root] > binarytree
+  subSum > sum
+    root
+  subCount > count
+    root
+
+[current] > subSum
+  if. > @
+    current.empty
+    0
+    add.
+      current.value
+      add.
+        subSum
+          current.left
+        subSum
+          current.right
+
+[current] > subCount
+  if. > @
+    current.empty
+    0
+    add.
+      1
+      add.
+        subCount
+          current.left
+        subSum
+          current.right

@@ -1,0 +1,7 @@
++package sandbox
+
+[arr] > intarrtofloatarr
+  map. > @
+    arr
+    [current]
+      current.toFloat > @

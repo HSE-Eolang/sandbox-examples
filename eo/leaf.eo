@@ -1,0 +1,4 @@
++package sandbox
+
+[] > leaf
+  true > empty

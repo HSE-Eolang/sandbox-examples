@@ -1,0 +1,19 @@
++package sandbox
++alias remove sandbox.remove
++alias first sandbox.first
++alias slicefrom sandbox.slicefrom
+
+[arr1 arr2] > removeall
+  if. > @
+    or.
+      arr1.empty
+      arr2.empty
+    arr1
+    removeall
+      remove
+        arr1
+        first
+          arr2
+      slicefrom
+        arr2
+        1

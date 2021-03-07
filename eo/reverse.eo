@@ -1,0 +1,13 @@
++package sandbox
+
+[arr] > reverse
+  mapi. > @
+    arr
+    [current index]
+      get. > @
+        ^.arr
+        sub.
+          ^.arr.length
+          add.
+            index
+            1
