@@ -1,4 +1,4 @@
-## Примеры различных объектов на EO
+## Examples for eolang objects
 
 Что есть:
 - [arrtostdout](#arrtostdout) 
