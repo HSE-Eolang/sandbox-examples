@@ -14,8 +14,8 @@
 - [first](#first)
 - [floatarrtostdout](#floatarrtostdout) TODO
 - [floatarrtostrarr](#floatarrtostrarr) TODO
-- [imax](#imax) TODO
-- [imin](#imin) TODO
+- [imax](#imax)
+- [imin](#imin)
 - [indexof](#indexof) TODO
 - [insert](#insert) TODO
 - [insertall](#insertall) TODO
@@ -23,12 +23,12 @@
 - [intarrtofloatarr](#intarrtofloatarr) TODO
 - [intarrtostdout](#intarrtostdout) TODO
 - [intarrtostrarr](#intarrtostrarr) TODO
-- [last](#last) TODO
+- [last](#last)
 - [leaf](#leaf)
-- [max](#max) TODO
-- [merge](#merge) TODO
+- [max](#max)
+- [merge](#merge)
 - [mergesort](#mergesort) TODO
-- [min](#min) TODO
+- [min](#min)
 - [node](#node)
 - [pi](#pi) TODO
 - [remove](#remove) TODO
@@ -298,6 +298,57 @@
 ```
 *Результат: 5*
 
+#### [imax](https://github.com/HSE-Eolang/sandbox-examples/blob/main/eo/imax.eo)
+Возвращает индекс максимального элемента массива и ошибку, если массив пустой. [Вернуться](#examples-for-eolang-objects)
+
+*Пример 1*
+```
+[args...] > app
+  stdout > @
+    sprintf
+      imax
+        *
+          5
+          2
+          3
+      "%d"
+```
+*Результат: 0*
+
+#### [imin](https://github.com/HSE-Eolang/sandbox-examples/blob/main/eo/imin.eo)
+Возвращает индекс минимального элемента массива и ошибку, если массив пустой. [Вернуться](#examples-for-eolang-objects)
+
+*Пример 1*
+```
+[args...] > app
+  stdout > @
+    sprintf
+      imin
+        *
+          5
+          2
+          3
+      "%d"
+```
+*Результат: 1*
+
+#### [last](https://github.com/HSE-Eolang/sandbox-examples/blob/main/eo/last.eo)
+Возвращает последний элемент массива и ошибку, если массив пустой. [Вернуться](#examples-for-eolang-objects)
+
+*Пример 1*
+```
+[args...] > app
+  stdout > @
+    sprintf
+      last
+        *
+          5
+          2
+          4
+      "%d"
+```
+*Результат: 4*
+
 #### [leaf](https://github.com/HSE-Eolang/sandbox-examples/blob/main/eo/leaf.eo)
 Лист необходим для обозначения конца в дереве. [Вернуться](#examples-for-eolang-objects)
 
@@ -310,6 +361,57 @@
       "%b"
 ```
 *Результат: True*
+
+#### [max](https://github.com/HSE-Eolang/sandbox-examples/blob/main/eo/max.eo)
+Возвращает максимальный элемент массива и ошибку, если массив пустой. [Вернуться](#examples-for-eolang-objects)
+
+*Пример 1*
+```
+[args...] > app
+  stdout > @
+    sprintf
+      max
+        *
+          5
+          2
+          4
+      "%d"
+```
+*Результат: 5*
+
+#### [merge](https://github.com/HSE-Eolang/sandbox-examples/blob/main/eo/merge.eo)
+Возвращает массив, полученный в результате соединения двух заданных, массивы могут быть пустыми. [Вернуться](#examples-for-eolang-objects)
+
+*Пример 1*
+```
+[args...] > app
+  intarrtostdout > @
+    merge
+      *
+        1
+        2
+      *
+        3
+        4
+```
+*Результат: 1 2 3 4*
+
+#### [min](https://github.com/HSE-Eolang/sandbox-examples/blob/main/eo/min.eo)
+Возвращает минимальный элемент массива и ошибку, если массив пустой. [Вернуться](#examples-for-eolang-objects)
+
+*Пример 1*
+```
+[args...] > app
+  stdout > @
+    sprintf
+      min
+        *
+          5
+          2
+          4
+      "%d"
+```
+*Результат: 2*
 
 #### [node](https://github.com/HSE-Eolang/sandbox-examples/blob/main/eo/node.eo)
 Узел дерева, содержащий некоторое значение и два других узла или листа. [Вернуться](#examples-for-eolang-objects)
