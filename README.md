@@ -10,40 +10,40 @@
 - [factorial](#factorial)
 - [fibonacci](#fibonacci)
 - [findcount](#findcount)
-- [findindex](#findindex) TODO
+- [findindex](#findindex)
 - [first](#first)
-- [floatarrtostdout](#floatarrtostdout) TODO
-- [floatarrtostrarr](#floatarrtostrarr) TODO
+- [floatarrtostdout](#floatarrtostdout)
+- [floatarrtostrarr](#floatarrtostrarr)
 - [imax](#imax)
 - [imin](#imin)
-- [indexof](#indexof) TODO
-- [insert](#insert) TODO
-- [insertall](#insertall) TODO
-- [insertionsort](#insertionsort) TODO
-- [intarrtofloatarr](#intarrtofloatarr) TODO
-- [intarrtostdout](#intarrtostdout) TODO
-- [intarrtostrarr](#intarrtostrarr) TODO
+- [indexof](#indexof)
+- [insert](#insert)
+- [insertall](#insertall)
+- [insertionsort](#insertionsort)
+- [intarrtofloatarr](#intarrtofloatarr)
+- [intarrtostdout](#intarrtostdout)
+- [intarrtostrarr](#intarrtostrarr)
 - [last](#last)
 - [leaf](#leaf)
 - [max](#max)
 - [merge](#merge)
-- [mergesort](#mergesort) TODO
+- [mergesort](#mergesort)
 - [min](#min)
 - [node](#node)
-- [pi](#pi) TODO
-- [remove](#remove) TODO
-- [removeall](#removeall) TODO
-- [removeat](#removeat) TODO
-- [reverse](#reverse) TODO
-- [selectionsort](#selectionsort) TODO
-- [set](#set) TODO
-- [slice](#slice) TODO
-- [slicefrom](#slicefrom) TODO
-- [sliceto](#sliceto) TODO
-- [strarrtointarr](#strarrtointarr) TODO
-- [strarrtostdout](#strarrtostdout) TODO
-- [sum](#sum) TODO
-- [unique](#unique) TODO
+- [pi](#pi)
+- [remove](#remove)
+- [removeall](#removeall)
+- [removeat](#removeat)
+- [reverse](#reverse)
+- [selectionsort](#selectionsort)
+- [set](#set)
+- [slice](#slice)
+- [slicefrom](#slicefrom)
+- [sliceto](#sliceto)
+- [strarrtointarr](#strarrtointarr)
+- [strarrtostdout](#strarrtostdout)
+- [sum](#sum)
+- [unique](#unique)
 
 #### [arrtostdout](https://github.com/HSE-Eolang/sandbox-examples/blob/main/eo/arrtostdout.eo)
 Выводит заданный массив в указанном формате. [Вернуться](#examples-for-eolang-objects)
@@ -221,7 +221,7 @@
 *Результат: 120*
 
 #### [fibonacci](https://github.com/HSE-Eolang/sandbox-examples/blob/main/eo/fibonacci.eo)
-Возвращает число, которое соотвествует заданной позиции в последовательности [Фибоначчи](https://ru.wikipedia.org/wiki/Числа_Фибоначчи). [Вернуться](#examples-for-eolang-objects)
+Возвращает число, которое соответствует заданной позиции в последовательности [Фибоначчи](https://ru.wikipedia.org/wiki/Числа_Фибоначчи). [Вернуться](#examples-for-eolang-objects)
 
 *Пример 1*
 ```
@@ -235,9 +235,9 @@
 *Результат: 55*
 
 #### [findcount](https://github.com/HSE-Eolang/sandbox-examples/blob/main/eo/findcount.eo)
-Возвращает число элементов массива, которое соотвествует заданному предикату. Главное условие для предиката - наличие атрибута "execute", возвращающее логическое значения. [Вернуться](#examples-for-eolang-objects)
+Возвращает число элементов массива, которое соответствует заданному предикату. Главное условие для предиката - наличие атрибута "execute", возвращающее логическое значения. [Вернуться](#examples-for-eolang-objects)
 
-*Пример 1. Предикат првоеряет равенство заданного числа с элементами массива, то есть данный пример аналогичен вызову [count](#count)*
+*Пример 1. Предикат проверяет равенство заданного числа с элементами массива, то есть данный пример аналогичен вызову [count](#count)*
 ```
 [args...] > app
   stdout > @
@@ -281,6 +281,53 @@
 ```
 *Результат: 2*
 
+#### [findindex](https://github.com/HSE-Eolang/sandbox-examples/blob/main/eo/findindex.eo)
+Возвращает номер первого элемента массива, который соответствует заданному предикату. Главное условие для предиката - наличие атрибута "execute", возвращающее логическое значения. [Вернуться](#examples-for-eolang-objects)
+
+*Пример 1. Предикат провоеряет равенство заданного числа с элементами массива, то есть данный пример аналогичен вызову [indexof](#indexof)*
+```
+[args...] > app
+  stdout > @
+    sprintf
+      findindex
+        *
+          1
+          2
+          3
+        mypredicate
+          2
+      "%d"
+      
+[some] > mypredicate
+  [current] > execute
+    eq. > @
+      some
+      current
+```
+*Результат: 1*
+
+*Пример 2. Предикат првоеряет меньше ли заданный элемент чем элемент массива*
+```
+[args...] > app
+  stdout > @
+    sprintf
+      findindex
+        *
+          1
+          2
+          3
+        mypredicate
+          4
+      "%d"
+      
+[some] > mypredicate
+  [current] > execute
+    less. > @
+      some
+      current
+```
+*Результат: -1*
+
 #### [first](https://github.com/HSE-Eolang/sandbox-examples/blob/main/eo/first.eo)
 Возвращает первый элемент массива и ошибку, если массив пустой. [Вернуться](#examples-for-eolang-objects)
 
@@ -297,6 +344,35 @@
       "%d"
 ```
 *Результат: 5*
+
+#### [floatarrtostdout](https://github.com/HSE-Eolang/sandbox-examples/blob/main/eo/floatarrtostdout.eo)
+Выводит в консоль массив чисел с плавающей точкой. [Вернуться](#examples-for-eolang-objects)
+
+*Пример 1*
+```
+[args...] > app
+  floatarrtostdout > @
+    *
+      5.0
+      2.2
+      3.1
+```
+*Результат: 5.0 2.2 3.1*
+
+#### [floatarrtostrarr](https://github.com/HSE-Eolang/sandbox-examples/blob/main/eo/floatarrtostrarr.eo)
+Перводит массив чисел с плавающей точков в строковый массив. [Вернуться](#examples-for-eolang-objects)
+
+*Пример 1*
+```
+[args...] > app
+  strarrtostdout > @
+    floatarrtostrarr
+      *
+        5.0
+        2.2
+        3.1
+```
+*Результат: 5.0 2.2 3.1*
 
 #### [imax](https://github.com/HSE-Eolang/sandbox-examples/blob/main/eo/imax.eo)
 Возвращает индекс максимального элемента массива и ошибку, если массив пустой. [Вернуться](#examples-for-eolang-objects)
@@ -331,6 +407,120 @@
       "%d"
 ```
 *Результат: 1*
+
+#### [indexof](https://github.com/HSE-Eolang/sandbox-examples/blob/main/eo/indexof.eo)
+Возвращает индекс первого элемента массива равного заданному, в противном случае возвращает -1. [Вернуться](#examples-for-eolang-objects)
+
+*Пример 1*
+```
+[args...] > app
+  stdout > @
+    sprintf
+      indexof
+        *
+          5
+          2
+          3
+        3
+      "%d"
+```
+*Результат: 2*
+
+#### [insert](https://github.com/HSE-Eolang/sandbox-examples/blob/main/eo/insert.eo)
+Вставляет в массив указанный элемент на заданную позицию. [Вернуться](#examples-for-eolang-objects)
+
+*Пример 1*
+```
+[args...] > app
+  intarrtostdout > @
+    insert
+      *
+        5
+        2
+        3
+      7
+      1
+```
+*Результат: 5 7 2 3*
+
+#### [insertall](https://github.com/HSE-Eolang/sandbox-examples/blob/main/eo/insertall.eo)
+Вставляет в массив указанный массив на заданную позицию. [Вернуться](#examples-for-eolang-objects)
+
+*Пример 1*
+```
+[args...] > app
+  intarrtostdout > @
+    insertall
+      *
+        1
+        2
+        3
+      *
+        4
+        5
+        6
+      2
+```
+*Результат: 1 2 4 5 6 3*
+
+#### [insertionsort](https://github.com/HSE-Eolang/sandbox-examples/blob/main/eo/insertionsort.eo)
+Сортирует массив при помощи сортировки вставками. [Вернуться](#examples-for-eolang-objects)
+
+*Пример 1*
+```
+[args...] > app
+  intarrtostdout > @
+    insertionsort
+      *
+        5
+        2
+        3
+```
+*Результат: 2 3 5*
+
+#### [intarrtofloatarr](https://github.com/HSE-Eolang/sandbox-examples/blob/main/eo/intarrtofloatarr.eo)
+Переводит массив целых чисел в массив чисел с плавающей точкой. [Вернуться](#examples-for-eolang-objects)
+
+*Пример 1*
+```
+[args...] > app
+  floatarrtostdout > @
+    intarrtofloatarr
+      *
+        5
+        2
+        3
+```
+*Результат: 5.0 2.0 3.0*
+
+#### [intarrtostdout](https://github.com/HSE-Eolang/sandbox-examples/blob/main/eo/intarrtostdout.eo)
+Выводит в консоль массив целых чисел. [Вернуться](#examples-for-eolang-objects)
+
+*Пример 1*
+```
+[args...] > app
+  intarrtostdout > @
+    *
+      5
+      2
+      3
+```
+*Результат: 5 2 3*
+
+#### [intarrtostrarr](https://github.com/HSE-Eolang/sandbox-examples/blob/main/eo/intarrtostrarr.eo)
+Переводит массив целых чисел в строковый массив. [Вернуться](#examples-for-eolang-objects)
+
+*Пример 1*
+```
+[args...] > app
+  strarrtostdout > @
+    intarrtostrarr
+      *
+        5
+        2
+        3
+```
+*Результат: 5 2 3*
 
 #### [last](https://github.com/HSE-Eolang/sandbox-examples/blob/main/eo/last.eo)
 Возвращает последний элемент массива и ошибку, если массив пустой. [Вернуться](#examples-for-eolang-objects)
@@ -396,6 +586,21 @@
 ```
 *Результат: 1 2 3 4*
 
+#### [mergesort](https://github.com/HSE-Eolang/sandbox-examples/blob/main/eo/mergesort.eo)
+Сортирует массив при помощи сортировки слиянием. [Вернуться](#examples-for-eolang-objects)
+
+*Пример 1*
+```
+[args...] > app
+  intarrtostdout > @
+    mergesort
+      *
+        5
+        2
+        3
+```
+*Результат: 2 3 5*
+
 #### [min](https://github.com/HSE-Eolang/sandbox-examples/blob/main/eo/min.eo)
 Возвращает минимальный элемент массива и ошибку, если массив пустой. [Вернуться](#examples-for-eolang-objects)
 
@@ -429,6 +634,254 @@
       "%d"
 ```
 *Результат: 5*
+
+#### [pi](https://github.com/HSE-Eolang/sandbox-examples/blob/main/eo/pi.eo)
+Возвращет число пи, также может рассчитать более точный результат с помощью вызова атрибута. [Вернуться](#examples-for-eolang-objects)
+
+*Пример 1*
+```
+[args...] > app
+  stdout > @
+    spritnf
+      pi
+      "%f"
+```
+*Результат: 3.1415926535*
+
+*Пример 2*
+```
+[args...] > app
+  stdout > @
+    spritnf
+      compute.
+        pi
+        1000
+      "%f"
+```
+*Результат: TODO*
+
+#### [remove](https://github.com/HSE-Eolang/sandbox-examples/blob/main/eo/remove.eo)
+Удаляет первое вхождение заданного элемента из массива, если такого элемента нет, то возвращает исходный массив. [Вернуться](#examples-for-eolang-objects)
+
+*Пример 1*
+```
+[args...] > app
+  intarrtostdout > @
+    remove
+      *
+        1
+        2
+        3
+      3
+```
+*Результат: 1 2*
+
+#### [removeall](https://github.com/HSE-Eolang/sandbox-examples/blob/main/eo/removeall.eo)
+Удаляет первое вхождение заданных элементов из массива, если таких элементов нет, то возвращает исходный массив. [Вернуться](#examples-for-eolang-objects)
+
+*Пример 1*
+```
+[args...] > app
+  intarrtostdout > @
+    removeall
+      *
+        1
+        2
+        3
+        2
+        4
+        5
+      *
+        2
+        2
+        5
+```
+*Результат: 1 3 4*
+
+#### [removeat](https://github.com/HSE-Eolang/sandbox-examples/blob/main/eo/removeat.eo)
+Удаляет элемент с заданным индексом из массива. [Вернуться](#examples-for-eolang-objects)
+
+*Пример 1*
+```
+[args...] > app
+  intarrtostdout > @
+    removeat
+      *
+        1
+        2
+        3
+        2
+      2
+```
+*Результат: 1 2 2*
+
+#### [reverse](https://github.com/HSE-Eolang/sandbox-examples/blob/main/eo/reverse.eo)
+Возвращает перевернутый массив. [Вернуться](#examples-for-eolang-objects)
+
+*Пример 1*
+```
+[args...] > app
+  intarrtostdout > @
+    reverse
+      *
+        1
+        2
+        3
+```
+*Результат: 3 2 1*
+
+#### [selectionsort](https://github.com/HSE-Eolang/sandbox-examples/blob/main/eo/selectionsort.eo)
+Сортирует массив при помощи сортировку выбором. [Вернуться](#examples-for-eolang-objects)
+
+*Пример 1*
+```
+[args...] > app
+  intarrtostdout > @
+    selectionsort
+      *
+        3
+        1
+        2
+```
+*Результат: 1 2 3*
+
+#### [set](https://github.com/HSE-Eolang/sandbox-examples/blob/main/eo/set.eo)
+Присваивает элементу массива с указанным индексом заданное значение. [Вернуться](#examples-for-eolang-objects)
+
+*Пример 1*
+```
+[args...] > app
+  intarrtostdout > @
+    set
+      *
+        1
+        2
+        3
+      2
+      7
+```
+*Результат: 1 2 7*
+
+#### [slice](https://github.com/HSE-Eolang/sandbox-examples/blob/main/eo/slice.eo)
+Возвращает срез массива в указанном диапозоне. [Вернуться](#examples-for-eolang-objects)
+
+*Пример 1*
+```
+[args...] > app
+  intarrtostdout > @
+    slcie
+      *
+        5
+        6
+        7
+        8
+        9
+      2
+      4
+```
+*Результат: 7 8*
+
+#### [slicefrom](https://github.com/HSE-Eolang/sandbox-examples/blob/main/eo/slicefrom.eo)
+Возвращает срез массива в c указанного начала и до его конца. [Вернуться](#examples-for-eolang-objects)
+
+*Пример 1*
+```
+[args...] > app
+  intarrtostdout > @
+    slicefrom
+      *
+        5
+        6
+        7
+        8
+        9
+      1
+```
+*Результат: 6 7 8 9*
+
+#### [sliceto](https://github.com/HSE-Eolang/sandbox-examples/blob/main/eo/sliceto.eo)
+Возвращает срез массива в c начала и до указанного конца. [Вернуться](#examples-for-eolang-objects)
+
+*Пример 1*
+```
+[args...] > app
+  intarrtostdout > @
+    slicefrom
+      *
+        5
+        6
+        7
+        8
+        9
+      3
+```
+*Результат: 5 6 7*
+
+#### [strarrtointarr](https://github.com/HSE-Eolang/sandbox-examples/blob/main/eo/strarrtointarr.eo)
+Переводит массив строк в массив целых чисел. [Вернуться](#examples-for-eolang-objects)
+
+*Пример 1*
+```
+[args...] > app
+  intarrtostdout > @
+      *
+        "5"
+        "3"
+        "1"
+```
+*Результат: 5 3 1*
+
+#### [strarrtostdout](https://github.com/HSE-Eolang/sandbox-examples/blob/main/eo/strarrtostdout.eo)
+Выводит в консоль массив строк. [Вернуться](#examples-for-eolang-objects)
+
+*Пример 1*
+```
+[args...] > app
+  strarrtostdout > @
+    *
+      "some"
+      "day"
+      "today"
+```
+*Результат: some day today*
+
+#### [sum](https://github.com/HSE-Eolang/sandbox-examples/blob/main/eo/sum.eo)
+Возвращает сумму элементов массива. [Вернуться](#examples-for-eolang-objects)
+
+*Пример 1*
+```
+[args...] > app
+  stdout > @
+    sprintf
+      sum
+        *
+          1
+          2
+          3
+          4
+      "%d"
+```
+*Результат: 10*
+
+#### [unique](https://github.com/HSE-Eolang/sandbox-examples/blob/main/eo/unique.eo)
+Возвращает массив без дубликатов. [Вернуться](#examples-for-eolang-objects)
+
+*Пример 1*
+```
+[args...] > app
+  intarrtostdout > @
+    unique
+      *
+        2
+        1
+        2
+        3
+        4
+        4
+        7
+        8
+```
+*Результат: 2 1 3 4 7 8*
 
 <img src="https://www.yegor256.com/images/books/elegant-objects/cactus.svg" height="100px" />
 
