@@ -88,11 +88,11 @@
 [args...] > app
   stdout > @
     sprintf
+      "%b"
       between
         2
         1
         3
-      "%b"
 ```
 *Результат: True*
 
@@ -101,11 +101,11 @@
 [args...] > app
   stdout > @
     sprintf
+      "%b"
       between
         5
         2
         3
-      "%b"
 ```
 *Результат: False*
 
@@ -117,6 +117,7 @@
 [args...] > app
   stdout > @
     sprintf
+      "%d"
       sum.
         binarytree
           node
@@ -132,7 +133,6 @@
                 leaf
                 leaf
               leaf
-      "%d"
 ```
 *Результат: 10*
 
@@ -144,13 +144,13 @@
 [args...] > app
   stdout > @
     sprintf
+      "%b"
       contains
         *
           1
           3
           5
         2 
-      "%b"
 ```
 *Результат: False*
 
@@ -159,13 +159,13 @@
 [args...] > app
   stdout > @
     sprintf
+      "%b"
       contains
         *
           1
           3
           5
-        3 
-      "%b"
+        3
 ```
 *Результат: True*
 
@@ -177,6 +177,7 @@
 [args...] > app
   stdout > @
     sprintf
+      "%d"
       count
         *
           2
@@ -185,7 +186,6 @@
           3
           2
         3
-      "%d"
 ```
 *Результат: 2*
 
@@ -194,6 +194,7 @@
 [args...] > app
   stdout > @
     sprintf
+      "%d"
       count
         *
           2
@@ -202,7 +203,6 @@
           3
           2
         5
-      "%d"
 ```
 *Результат: 0*
 
@@ -214,9 +214,9 @@
 [args...] > app
   stdout > @
     sprintf
+      "%d"
       factorial
         5
-      "%d"
 ```
 *Результат: 120*
 
@@ -228,9 +228,9 @@
 [args...] > app
   stdout > @
     sprintf
+      "%d"
       fibonacci
         10
-      "%d"
 ```
 *Результат: 55*
 
@@ -242,6 +242,7 @@
 [args...] > app
   stdout > @
     sprintf
+      "%d"
       findcount
         *
           1
@@ -249,7 +250,6 @@
           3
         mypredicate
           2
-      "%d"
       
 [some] > mypredicate
   [current] > execute
@@ -264,6 +264,7 @@
 [args...] > app
   stdout > @
     sprintf
+      "%d"
       findcount
         *
           1
@@ -271,7 +272,6 @@
           3
         mypredicate
           1
-      "%d"
       
 [some] > mypredicate
   [current] > execute
@@ -288,7 +288,8 @@
 ```
 [args...] > app
   stdout > @
-    sprintf
+    sprint
+      "%d"
       findindex
         *
           1
@@ -296,7 +297,6 @@
           3
         mypredicate
           2
-      "%d"
       
 [some] > mypredicate
   [current] > execute
@@ -311,6 +311,7 @@
 [args...] > app
   stdout > @
     sprintf
+      "%d"
       findindex
         *
           1
@@ -318,7 +319,6 @@
           3
         mypredicate
           4
-      "%d"
       
 [some] > mypredicate
   [current] > execute
@@ -336,12 +336,12 @@
 [args...] > app
   stdout > @
     sprintf
+      "%d"
       first
         *
           5
           2
           3
-      "%d"
 ```
 *Результат: 5*
 
@@ -382,12 +382,12 @@
 [args...] > app
   stdout > @
     sprintf
+      "%d"
       imax
         *
           5
           2
           3
-      "%d"
 ```
 *Результат: 0*
 
@@ -399,12 +399,12 @@
 [args...] > app
   stdout > @
     sprintf
+      "%d"
       imin
         *
           5
           2
           3
-      "%d"
 ```
 *Результат: 1*
 
@@ -416,13 +416,13 @@
 [args...] > app
   stdout > @
     sprintf
+      "%d"
       indexof
         *
           5
           2
           3
         3
-      "%d"
 ```
 *Результат: 2*
 
@@ -530,12 +530,12 @@
 [args...] > app
   stdout > @
     sprintf
+      "%d"
       last
         *
           5
           2
           4
-      "%d"
 ```
 *Результат: 4*
 
@@ -547,8 +547,8 @@
 [args...] > app
   stdout > @
     sprintf
-      leaf.empty
       "%b"
+      leaf.empty
 ```
 *Результат: True*
 
@@ -560,12 +560,12 @@
 [args...] > app
   stdout > @
     sprintf
+      "%d"
       max
         *
           5
           2
           4
-      "%d"
 ```
 *Результат: 5*
 
@@ -609,12 +609,12 @@
 [args...] > app
   stdout > @
     sprintf
+      "%d"
       min
         *
           5
           2
           4
-      "%d"
 ```
 *Результат: 2*
 
@@ -626,12 +626,12 @@
 [args...] > app
   stdout > @
     sprintf
+      "%d"
       value.
         node
           5
           leaf
           leaf
-      "%d"
 ```
 *Результат: 5*
 
@@ -643,8 +643,8 @@
 [args...] > app
   stdout > @
     spritnf
-      pi
       "%f"
+      pi
 ```
 *Результат: 3.1415926535*
 
@@ -653,10 +653,10 @@
 [args...] > app
   stdout > @
     spritnf
+      "%f"
       compute.
         pi
         1000
-      "%f"
 ```
 *Результат: TODO*
 
